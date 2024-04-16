@@ -3,12 +3,16 @@ import Link from "next/link";
 import MealsGrid from "@/components/meals/meals-grid";
 import { getMeals, connectDatabase } from "@/lib/meals";
 import classes from "./page.module.css";
+import { Suspense } from "react";
+import MealsLoadingPage from "./loading";
+
+async function Meals() {
+  const client = await connectDatabase();
+  const allMeals = await getMeals(client, "meals");
+  return <MealsGrid meals={allMeals} />;
+}
 
 export default async function MealsPage() {
-  const client = await connectDatabase();
-
-  const allMeals = await getMeals(client, "meals");
-
   return (
     <>
       <header className={classes.header}>
@@ -25,7 +29,11 @@ export default async function MealsPage() {
         </p>
       </header>
       <main className={classes.main}>
-        <MealsGrid meals={allMeals} />
+        <Suspense
+          fallback={<p className={classes.loading}>Fetching meals...</p>}
+        >
+          <Meals />
+        </Suspense>
       </main>
     </>
   );
