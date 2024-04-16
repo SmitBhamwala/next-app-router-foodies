@@ -1,11 +1,13 @@
 import Link from "next/link";
 
 import MealsGrid from "@/components/meals/meals-grid";
-import getMeals from "@/lib/meals";
+import { getMeals, connectDatabase } from "@/lib/meals";
 import classes from "./page.module.css";
 
 export default async function MealsPage() {
-  const allMeals = await getMeals();
+  const client = await connectDatabase();
+
+  const allMeals = await getMeals(client, "meals");
 
   return (
     <>
