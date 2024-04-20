@@ -4,7 +4,6 @@ import MealsGrid from "@/components/meals/meals-grid";
 import { getMeals, connectDatabase } from "@/lib/meals";
 import classes from "./page.module.css";
 import { Suspense } from "react";
-import MealsLoadingPage from "./loading";
 
 async function Meals() {
   const client = await connectDatabase();
