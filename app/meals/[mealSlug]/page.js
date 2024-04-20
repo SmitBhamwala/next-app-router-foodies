@@ -1,9 +1,13 @@
 import Image from "next/image";
 import classes from "./page.module.css";
 import { notFound } from "next/navigation";
+//To not get Type ERROR "self-signed certificate in certificate chain" while fetching data from Firebase
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 async function getMealDetails(mealSlug) {
-  const response = await fetch(`http:localhost:3000/api/meals/${mealSlug}`);
+  const response = await fetch(
+    `https://nextfoodies.vercel.app/api/meals/${mealSlug}`
+  );
   const data = await response.json();
   return data[0];
 }
