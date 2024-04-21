@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import MealsGrid from "@/components/meals/meals-grid";
-import { getMeals, connectDatabase } from "@/lib/meals";
+import { getMeals, connectDatabase } from "@/lib/db";
 import classes from "./page.module.css";
 import { Suspense } from "react";
 

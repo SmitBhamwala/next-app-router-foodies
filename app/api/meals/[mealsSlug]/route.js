@@ -1,4 +1,4 @@
-import { connectDatabase, getMeals } from "@/lib/meals";
+import { connectDatabase, getMeals } from "@/lib/db";
 import { NextResponse } from "next/server";
 
 export async function GET(req, { params }) {
