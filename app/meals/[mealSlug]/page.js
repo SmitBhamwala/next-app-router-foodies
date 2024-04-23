@@ -4,6 +4,20 @@ import { notFound } from "next/navigation";
 //To not get Type ERROR "self-signed certificate in certificate chain" while fetching data from Firebase
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
+export async function generateMetadata({ params }) {
+  const { mealSlug } = params;
+  const meal = await getMealDetails(mealSlug);
+
+  if (!meal) {
+    notFound();
+  }
+
+  return {
+    title: meal.title,
+    description: meal.summary,
+  };
+}
+
 async function getMealDetails(mealSlug) {
   const response = await fetch(
     `https://nextfoodies.vercel.app/api/meals/${mealSlug}`
@@ -15,9 +29,11 @@ async function getMealDetails(mealSlug) {
 export default async function MealsSlug({ params }) {
   const { mealSlug } = params;
   const meal = await getMealDetails(mealSlug);
+
   if (!meal) {
     notFound();
   }
+
   meal.instructions = meal.instructions.replace(/\n/g, "<br />");
 
   return (

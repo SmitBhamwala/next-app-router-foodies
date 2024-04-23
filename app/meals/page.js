@@ -5,6 +5,11 @@ import { getMeals, connectDatabase } from "@/lib/db";
 import classes from "./page.module.css";
 import { Suspense } from "react";
 
+export const metadata = {
+  title: "All Meals",
+  description: "Browse the delicious meals shared by our vibrant community.",
+};
+
 async function Meals() {
   const client = await connectDatabase();
   const allMeals = await getMeals(client, "meals");
