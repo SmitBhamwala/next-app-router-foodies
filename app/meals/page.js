@@ -6,8 +6,9 @@ import classes from "./page.module.css";
 import { Suspense } from "react";
 
 export const metadata = {
-  title: "All Meals by SB and Community",
-  description: "Browse the delicious meals shared by our vibrant community.",
+  title: "All Meals by Bhamwala and Community",
+  description:
+    "Browse the delicious meals shared by Bhamwala and our vibrant community.",
 };
 
 async function Meals() {
