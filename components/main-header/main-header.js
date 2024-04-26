@@ -18,7 +18,7 @@ export default function MainHeader() {
             alt="A plate with food on it"
             priority
           />
-          Foodies
+          SB's FoodZone
         </Link>
 
         <nav className={classes.nav}>
