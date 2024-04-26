@@ -1,14 +1,33 @@
 .header {
   display: flex;
-  gap: 3rem;
-  margin: 3rem auto;
-  width: 90%;
-  max-width: 75rem;
+  margin: 2rem auto;
+  width: 80%;
+  /* max-width: 100vw; */
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    margin: 3rem auto;
+    width: 90%;
+    max-width: 75rem;
+  }
 }
 
 .slideshow {
-  width: 40rem;
-  height: 25rem;
+  width: 100%;
+  aspect-ratio: 4/3;
+  /* height: 12.5rem; */
+}
+
+@media (min-width: 768px) {
+  .slideshow {
+    width: 40rem;
+    height: 25rem;
+  }
 }
 
 .hero {
