@@ -20,7 +20,8 @@ export async function generateMetadata({ params }) {
 
 async function getMealDetails(mealSlug) {
   const response = await fetch(
-    `https://nextfoodies.vercel.app/api/meals/${mealSlug}`
+    `https://nextfoodies.vercel.app/api/meals/${mealSlug}`,
+    { cache: "no-store" }
   );
   const data = await response.json();
   return data[0];

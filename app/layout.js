@@ -2,10 +2,11 @@ import MainHeader from "@/components/main-header/main-header";
 import "./globals.css";
 
 export const metadata = {
-  title: "Bhamwala next level foodzone for Foodies",
+  title: "Kachraseth's next level foodzone for Foodies",
   description:
-    "Delicious meals, shared by Bhamwalas and food-loving community.",
+    "Delicious meals, shared by Kachraseth and food-loving community.",
   keywords: [
+    "Kachraseth",
     "Bhamwala",
     "next",
     "level",
@@ -28,6 +29,15 @@ export const metadata = {
     "over",
     "the",
     "world",
+    "tasty",
+    "yummy",
+    "platform",
+    "foodies",
+    "share",
+    "favorite recipes",
+    "world",
+    "discover new dishes",
+    "connect with other food lovers",
   ],
 };
 

@@ -4,16 +4,18 @@ import MealsGrid from "@/components/meals/meals-grid";
 import { getMeals, connectDatabase } from "@/lib/db";
 import classes from "./page.module.css";
 import { Suspense } from "react";
+import MealsLoader from "@/components/meals/meal-loader";
 
 export const metadata = {
-  title: "All Meals by Bhamwala and Community",
+  title: "All Meals by Kachraseth and Community",
   description:
-    "Browse the delicious meals shared by Bhamwala and our vibrant community.",
+    "Browse the delicious meals shared by Kachraseth and our vibrant community.",
 };
 
 async function Meals() {
   const client = await connectDatabase();
   const allMeals = await getMeals(client, "meals");
+  await client.close();
   return <MealsGrid meals={allMeals} />;
 }
 
@@ -34,9 +36,7 @@ export default async function MealsPage() {
         </p>
       </header>
       <main className={classes.main}>
-        <Suspense
-          fallback={<p className={classes.loading}>Fetching meals...</p>}
-        >
+        <Suspense fallback={<MealsLoader />}>
           <Meals />
         </Suspense>
       </main>

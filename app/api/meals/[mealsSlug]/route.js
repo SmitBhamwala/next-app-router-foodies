@@ -8,8 +8,12 @@ export async function GET(req, { params }) {
     const mealDetails = await getMeals(client, "meals", {
       slug: mealsSlug,
     });
+
+    await client.close();
+
     return new NextResponse(JSON.stringify(mealDetails, { status: 200 }));
   } catch (err) {
+    await client.close();
     console.log(err);
     return new NextResponse(
       JSON.stringify(
