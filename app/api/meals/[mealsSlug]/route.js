@@ -1,15 +1,16 @@
-import { connectDatabase, getMeals } from "@/lib/db";
+import { getMeals } from "@/lib/db";
+import clientPromise from "@/lib/db";
 import { NextResponse } from "next/server";
 
 export async function GET(req, { params }) {
   const { mealsSlug } = params;
   try {
-    const client = await connectDatabase();
+    const client = await clientPromise;
     const mealDetails = await getMeals(client, "meals", {
       slug: mealsSlug,
     });
 
-    await client.close();
+    // await client.close();
 
     return new NextResponse(JSON.stringify(mealDetails, { status: 200 }));
   } catch (err) {

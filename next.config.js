@@ -9,6 +9,7 @@ module.exports = (phase) => {
         mongodb_password: "MEqYb1MaspYQjbg3",
         mongodb_clustername: "mytestcluster",
         mongodb_database: "nextFoodies",
+        meals_fetch_pathname: "http://localhost:3000",
       },
     };
   }
@@ -20,6 +21,7 @@ module.exports = (phase) => {
       mongodb_password: "MEqYb1MaspYQjbg3",
       mongodb_clustername: "mytestcluster",
       mongodb_database: "nextFoodies",
+      meals_fetch_pathname: "https://nextfoodies.vercel.app",
     },
   };
 };

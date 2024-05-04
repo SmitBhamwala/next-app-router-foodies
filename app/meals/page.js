@@ -1,21 +1,23 @@
 import Link from "next/link";
 
 import MealsGrid from "@/components/meals/meals-grid";
-import { getMeals, connectDatabase } from "@/lib/db";
+import { getMeals } from "@/lib/db";
+import clientPromise from "@/lib/db";
 import classes from "./page.module.css";
 import { Suspense } from "react";
 import MealsLoader from "@/components/meals/meal-loader";
 
 export const metadata = {
-  title: "All Meals by Kachraseth and Community",
+  title: "All Meals by SB and Community",
   description:
-    "Browse the delicious meals shared by Kachraseth and our vibrant community.",
+    "Browse the delicious meals shared by SB and our vibrant community.",
 };
 
 async function Meals() {
-  const client = await connectDatabase();
+  const client = await clientPromise;
   const allMeals = await getMeals(client, "meals");
-  await client.close();
+
+  // await client.close();
   return <MealsGrid meals={allMeals} />;
 }
 

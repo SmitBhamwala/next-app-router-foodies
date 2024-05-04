@@ -2,9 +2,9 @@ import MainHeader from "@/components/main-header/main-header";
 import "./globals.css";
 
 export const metadata = {
-  title: "Kachraseth's next level foodzone for Foodies",
+  title: "SB's Next Level Foodzone For Foodies",
   description:
-    "Delicious meals, shared by Kachraseth and food-loving community.",
+    "Delicious meals, shared by SB and food-loving community.",
   keywords: [
     "Kachraseth",
     "Bhamwala",

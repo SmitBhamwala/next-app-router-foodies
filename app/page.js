@@ -11,8 +11,8 @@ export default function Home() {
         </div>
         <div>
           <div className={classes.hero}>
-            {/* <h1>NextLevel Food for NextLevel Foodies</h1> */}
-            <h1>Kachraseth&apos;s nextlevel foodzone for Foodies</h1>
+            {/* <h1>Next Level Food for NextLevel Foodies</h1> */}
+            <h1>SB&apos;s Next Level Foodzone For Foodies</h1>
             <p>Taste and share food from all over the world.</p>
           </div>
           <div className={classes.cta}>
