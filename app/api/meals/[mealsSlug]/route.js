@@ -12,15 +12,17 @@ export async function GET(req, { params }) {
 
     // await client.close();
 
-    return new NextResponse(JSON.stringify(mealDetails, { status: 200 }));
+    return NextResponse.json({ mealDetails: mealDetails }, { status: 200 });
   } catch (err) {
     await client.close();
     console.log(err);
-    return new NextResponse(
-      JSON.stringify(
-        { message: err || "Something went wrong!!" },
-        { status: 500 }
-      )
+    return NextResponse.json(
+      {
+        message: err || "Something went wrong!!",
+      },
+      {
+        status: 500,
+      }
     );
   }
 }
