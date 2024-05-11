@@ -24,7 +24,7 @@ async function getMealDetails(mealSlug) {
     { cache: "no-store" }
   );
   const data = await response.json();
-  return data[0];
+  return data.mealDetails[0];
 }
 
 export default async function MealsSlug({ params }) {
