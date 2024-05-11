@@ -10,6 +10,7 @@ module.exports = (phase) => {
         mongodb_clustername: "mytestcluster",
         mongodb_database: "nextFoodies",
         meals_fetch_pathname: "http://localhost:3000",
+        api_key: "TheSecretKey",
       },
     };
   }
@@ -22,6 +23,7 @@ module.exports = (phase) => {
       mongodb_clustername: "mytestcluster",
       mongodb_database: "nextFoodies",
       meals_fetch_pathname: "https://nextfoodies.vercel.app",
+      api_key: "TheSecretKey",
     },
   };
 };

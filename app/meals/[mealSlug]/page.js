@@ -21,6 +21,7 @@ export async function generateMetadata({ params }) {
 async function getMealDetails(mealSlug) {
   const response = await fetch(
     `${process.env.meals_fetch_pathname}/api/meals/${mealSlug}`,
+    { headers: { "api-key": process.env.api_key } },
     { cache: "no-store" }
   );
   const data = await response.json();
